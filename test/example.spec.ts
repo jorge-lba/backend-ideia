@@ -1,7 +1,23 @@
 import test from 'japa'
+import supertest from 'supertest'
+import Env from '@ioc:Adonis/Core/Env'
 
-test.group('Example', () => {
-  test('assert sum', (assert) => {
-    assert.equal(2 + 2, 4)
+const BASE_URL = `http://${process.env.HOST}:${process.env.PORT}`
+
+test.group('Welcome', () => {
+  test('ensure home page works', async (assert) => {
+    /**
+     * Make request
+     */
+    const { body } = await supertest(BASE_URL)
+      .get('/')
+      .expect(200)
+    console.log('result: ', body)
+    /**
+     * Construct JSDOM instance using the response HTML
+     */
+    const hello = body?.hello
+    assert.exists(hello)
+    assert.equal(hello, 'world')
   })
 })
