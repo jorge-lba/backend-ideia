@@ -1,6 +1,5 @@
 import test from 'japa'
 import supertest from 'supertest'
-import Env from '@ioc:Adonis/Core/Env'
 
 const BASE_URL = `http://${process.env.HOST}:${process.env.PORT}`
 
