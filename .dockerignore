@@ -3,3 +3,4 @@ build/
 .gitignore
 REDME.md
 Dockerfile
+node_modules
