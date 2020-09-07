@@ -6,7 +6,7 @@ steps:
     args: ['run', '-d', '--name', 'ideia-backend', 'gcr.io/ideia-back/ideia-backend:0.0.1']
 
   - name: 'docker'
-    args: ['exec', 'ideia-backend', 'yarn', 'build/japaFile.js']
+    args: ['exec', 'ideia-backend', 'node', 'build/japaFile.js']
 
   # - name: 'docker'
   #   args: ['push', 'gcr.io/ideia-back/ideia-backend:0.0.1']
