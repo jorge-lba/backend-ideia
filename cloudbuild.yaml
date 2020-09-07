@@ -15,5 +15,5 @@ steps:
     args: ['push', 'gcr.io/ideia-back/ideia-backend:$SHORT_SHA']
 
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['run', 'deploy', 'ideia-backend-cloudrun', '--image', 'gcr.io/ideia-back/ideia-backend:$SHORT_SHA', '--region', 'us-central1', 'manages', '--allow-unauthenticated']
+    args: ['run', 'deploy', 'ideia-backend-cloudrun', '--image', 'gcr.io/ideia-back/ideia-backend:$SHORT_SHA', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
 
