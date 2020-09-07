@@ -6,7 +6,7 @@ COPY package*.json ./
 
 RUN npm install yarn 
 RUN yarn
-
+fds
 COPY . .
 
 EXPOSE 3333
