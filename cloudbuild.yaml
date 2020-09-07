@@ -6,7 +6,7 @@ steps:
     args: ['run', '-d', '--name', 'ideia-backend', 'gcr.io/ideia-back/ideia-backend:0.0.3']
 
   - name: 'docker'
-    args: ['exec', 'ideia-backend', 'yarn', 'test']
+    args: ['exec', 'ideia-backend', 'npm', 'test']
 
   - name: 'docker'
     args: ['push', 'gcr.io/ideia-back/ideia-backend:0.0.3']
