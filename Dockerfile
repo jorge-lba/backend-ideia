@@ -5,11 +5,12 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 RUN npm install yarn 
-RUN yarn
+
+RUN yarn install
 
 COPY . .
 
-EXPOSE 8080
+EXPOSE 3333
 
 # ENTRYPOINT [ "./build" ]
 
