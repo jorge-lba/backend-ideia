@@ -8,9 +8,12 @@ steps:
   # - name: 'docker'
   #   args: ['exec', 'ideia-backend', 'node', 'build/japaFile.js']
 
-  # - name: 'docker'
-  #   args: ['push', 'gcr.io/ideia-back/ideia-backend:0.0.1']
+  - name: 'docker'
+    args: ['push', 'gcr.io/ideia-back/ideia-backend:0.0.1']
 
-  # - name: 'docker'
-  #   args: ['push', 'gcr.io/ideia-back/ideia-backend:$SHORT_SHA']
+  - name: 'docker'
+    args: ['push', 'gcr.io/ideia-back/ideia-backend:$SHORT_SHA']
+
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['run', 'deploy', 'ideia-backend-cloudrun', '--image', 'gcr.io/ideia-back/ideia-backend:$SHORT_SHA', '--region', 'us-central1', 'manages', '--allow-unauthenticated']
 
